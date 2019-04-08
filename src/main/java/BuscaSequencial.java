@@ -18,10 +18,18 @@ public class BuscaSequencial {
 	}
 
 	public int busca(Object o) {
-		return 0;
+		return this.lista.indexOf(o);
 	}
 
 	public int buscaRecursiva(Object o, int indice) {
-		return 0;		
+		if (this.lista.get(indice).equals(o)) {
+			return indice;
+		}else {						
+			if (++indice >= this.lista.size()) {
+				return -1;				
+			}else {				
+				return this.buscaRecursiva(o, indice);				
+			}
+		}
 	}
 }
